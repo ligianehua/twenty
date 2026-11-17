@@ -201,10 +201,7 @@ export const GettingStartedImportPreview = () => {
         </StyledWires>
         <StyledSide>
           <StyledSideHeader>
-            <StyledTwentyLogo
-              src="/images/brand/logo.svg"
-              alt=""
-            />
+            <StyledTwentyLogo src="/images/brand/logo.svg" alt="" />
             {t`Twenty fields`}
           </StyledSideHeader>
           {TARGET_FIELDS.map((field) => (

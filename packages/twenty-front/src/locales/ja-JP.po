@@ -1050,6 +1050,11 @@ msgstr "{positionLabel}：{name}"
 msgid "{prefilledCount} of {fieldCount} fields prefilled"
 msgstr "{fieldCount} フィールド中 {prefilledCount} フィールドが事前入力済み"
 
+#. js-lingui-id: MJezXo
+#: src/modules/onboarding/components/OnboardingInviteTeamSkipDialog.tsx
+msgid "{productName} works better with your team"
+msgstr ""
+
 #. js-lingui-id: LA2w8d
 #: src/modules/settings/applications/components/SettingsApplicationConnectionProviderSection.tsx
 msgid "{providerDisplayName} OAuth is not yet set up by your server administrator. They need to fill in the OAuth client ID and secret on the application registration before you can add a connection."
@@ -5405,10 +5410,10 @@ msgstr "提供: {author}"
 msgid "by {trimmedAuthor}"
 msgstr "提供: {trimmedAuthor}"
 
-#. js-lingui-id: 8Pfllj
+#. js-lingui-id: mI7qbs
 #: src/modules/auth/sign-in-up/components/FooterNote.tsx
-msgid "By using Twenty, you agree to the"
-msgstr "Twentyを利用することにより、以下の事項に同意したものとみなされます。"
+msgid "By using {productName}, you agree to the"
+msgstr ""
 
 #. js-lingui-id: 7l+dLC
 #: src/modules/marketplace/constants/PermissionFlagSummaryConfigs.ts
@@ -30808,11 +30813,6 @@ msgstr "Twentyは、要件を満たす最適なモデルで各レベルを構成
 #: src/modules/getting-started/components/GettingStartedBookCallSummary.tsx
 msgid "Twenty team"
 msgstr "Twenty チーム"
-
-#. js-lingui-id: qUadjH
-#: src/modules/onboarding/components/OnboardingInviteTeamSkipDialog.tsx
-msgid "Twenty works better with your team"
-msgstr "Twenty はチームで使うとさらに便利です"
 
 #. js-lingui-id: YIjS4q
 #: src/modules/ai/hooks/useAgentModelCapabilities.ts

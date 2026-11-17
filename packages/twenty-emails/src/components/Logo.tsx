@@ -14,7 +14,9 @@ export const Logo = ({ i18n }: LogoProps) => {
   return (
     <Img
       src={BRAND_CONFIG.emailLogoUrl}
-      alt={i18n._('{productName} logo', { productName: BRAND_CONFIG.productName })}
+      alt={i18n._('{productName} logo', {
+        productName: BRAND_CONFIG.productName,
+      })}
       width="40"
       height="40"
       style={logoStyle}
