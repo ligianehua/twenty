@@ -1,30 +1,13 @@
-import {
-  DOCUMENTATION_DEFAULT_LANGUAGE,
-  DOCUMENTATION_SUPPORTED_LANGUAGES,
-  type DocumentationSupportedLanguage,
-} from 'twenty-shared/constants';
-
-const TWENTY_WEBSITE_HREF = 'https://twenty.com';
+import { BRAND_CONFIG } from 'twenty-shared/constants';
 
 type TwentyWebsitePage = 'terms' | 'privacy-policy';
 
-export const getTwentyWebsiteUrl = (
-  locale: string,
-  page: TwentyWebsitePage,
-): string => {
-  const language = new Intl.Locale(locale).language;
-
-  const isLocalizedWebsitePath =
-    language !== DOCUMENTATION_DEFAULT_LANGUAGE &&
-    DOCUMENTATION_SUPPORTED_LANGUAGES.some(
-      (supportedLanguage: DocumentationSupportedLanguage) =>
-        supportedLanguage === language,
-    );
-
-  const url = new URL(
-    isLocalizedWebsitePath ? `/${language}/${page}` : `/${page}`,
-    TWENTY_WEBSITE_HREF,
-  );
-
-  return url.toString();
+const PATH_BY_PAGE: Record<TwentyWebsitePage, string> = {
+  terms: BRAND_CONFIG.termsPath,
+  'privacy-policy': BRAND_CONFIG.privacyPolicyPath,
 };
+
+export const getTwentyWebsiteUrl = (
+  _locale: string,
+  page: TwentyWebsitePage,
+): string => new URL(PATH_BY_PAGE[page], BRAND_CONFIG.websiteUrl).toString();

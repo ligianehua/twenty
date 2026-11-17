@@ -1,5 +1,6 @@
 import { type I18n } from '@lingui/core';
 import { Img } from 'react-email';
+import { BRAND_CONFIG } from 'twenty-shared/constants';
 
 const logoStyle = {
   marginBottom: '40px',
@@ -12,8 +13,8 @@ type LogoProps = {
 export const Logo = ({ i18n }: LogoProps) => {
   return (
     <Img
-      src="https://app.twenty.com/images/icons/windows11/Square150x150Logo.scale-100.png"
-      alt={i18n._('Twenty logo')}
+      src={BRAND_CONFIG.emailLogoUrl}
+      alt={i18n._('{productName} logo', { productName: BRAND_CONFIG.productName })}
       width="40"
       height="40"
       style={logoStyle}

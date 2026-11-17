@@ -5,6 +5,7 @@ import { useWorkspaceBypass } from '@/auth/sign-in-up/hooks/useWorkspaceBypass';
 import { getTwentyWebsiteUrl } from '@/auth/utils/getTwentyWebsiteUrl';
 import { useIsCurrentLocationOnAWorkspace } from '@/domain-manager/hooks/useIsCurrentLocationOnAWorkspace';
 import { ONBOARDING_CONTENT_BLOCK_WIDTH } from '@/onboarding/constants/OnboardingContentBlockWidth';
+import { BRAND_CONFIG } from 'twenty-shared/constants';
 import { themeCssVariables } from 'twenty-ui/theme';
 
 const StyledCopyContainer = styled.div`
@@ -60,6 +61,7 @@ const StyledSeparator = styled.span`
 export const FooterNote = () => {
   const { isOnAWorkspace } = useIsCurrentLocationOnAWorkspace();
   const { i18n } = useLingui();
+  const productName = BRAND_CONFIG.productName;
 
   const { shouldOfferBypass, shouldUseBypass, enableBypass } =
     useWorkspaceBypass();
@@ -67,7 +69,7 @@ export const FooterNote = () => {
   if (!isOnAWorkspace) {
     return (
       <StyledCopyContainer>
-        <Trans>By using Twenty, you agree to the</Trans>{' '}
+        <Trans>By using {productName}, you agree to the</Trans>{' '}
         <a
           href={getTwentyWebsiteUrl(i18n.locale, 'terms')}
           target="_blank"

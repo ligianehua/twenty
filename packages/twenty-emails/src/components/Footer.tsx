@@ -2,6 +2,7 @@ import { type I18n } from '@lingui/core';
 import { Column, Container, Row } from 'react-email';
 import { Link } from 'src/components/Link';
 import { ShadowText } from 'src/components/ShadowText';
+import { BRAND_CONFIG } from 'twenty-shared/constants';
 
 const footerContainerStyle = {
   marginTop: '12px',
@@ -18,45 +19,45 @@ export const Footer = ({ i18n }: FooterProps) => {
         <Column>
           <ShadowText>
             <Link
-              href="https://twenty.com/"
+              href={BRAND_CONFIG.websiteUrl}
               value={i18n._('Website')}
-              aria-label={i18n._("Visit Twenty's website")}
+              aria-label={i18n._("Visit {productName}'s website", { productName: BRAND_CONFIG.productName })}
             />
           </ShadowText>
         </Column>
         <Column>
           <ShadowText>
             <Link
-              href="https://github.com/twentyhq/twenty"
+              href={BRAND_CONFIG.sourceCodeUrl}
               value={i18n._('Github')}
-              aria-label={i18n._("Visit Twenty's GitHub repository")}
+              aria-label={i18n._("Visit {productName}'s source code repository", { productName: BRAND_CONFIG.productName })}
             />
           </ShadowText>
         </Column>
         <Column>
           <ShadowText>
             <Link
-              href="https://docs.twenty.com/getting-started/introduction"
+              href={BRAND_CONFIG.documentationUrl}
               value={i18n._('User guide')}
-              aria-label={i18n._("Read Twenty's user guide")}
+              aria-label={i18n._("Read {productName}'s user guide", { productName: BRAND_CONFIG.productName })}
             />
           </ShadowText>
         </Column>
         <Column>
           <ShadowText>
             <Link
-              href="https://docs.twenty.com/"
+              href={BRAND_CONFIG.documentationUrl}
               value={i18n._('Developers')}
-              aria-label={i18n._("Visit Twenty's developer documentation")}
+              aria-label={i18n._("Visit {productName}'s developer documentation", { productName: BRAND_CONFIG.productName })}
             />
           </ShadowText>
         </Column>
       </Row>
       <ShadowText>
         <>
-          {i18n._('Twenty.com, Public Benefit Corporation')}
+          {BRAND_CONFIG.legalEntityName}
           <br />
-          {i18n._('San Francisco / Paris')}
+          {BRAND_CONFIG.legalEntityLocation}
         </>
       </ShadowText>
     </Container>

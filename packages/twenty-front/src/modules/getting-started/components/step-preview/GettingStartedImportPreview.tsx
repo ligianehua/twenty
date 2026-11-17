@@ -202,7 +202,7 @@ export const GettingStartedImportPreview = () => {
         <StyledSide>
           <StyledSideHeader>
             <StyledTwentyLogo
-              src="/images/integrations/twenty-logo.svg"
+              src="/images/brand/logo.svg"
               alt=""
             />
             {t`Twenty fields`}

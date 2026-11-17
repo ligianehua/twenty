@@ -5,6 +5,7 @@ import { MainText } from 'src/components/MainText';
 import { Title } from 'src/components/Title';
 import { createI18nInstance } from 'src/utils/i18n.utils';
 import { type APP_LOCALES } from 'twenty-shared/translations';
+import { BRAND_CONFIG } from 'twenty-shared/constants';
 
 type SendEmailVerificationLinkEmailProps = {
   link: string;
@@ -30,9 +31,15 @@ export const SendEmailVerificationLinkEmail = ({
       <Title value={title} />
       <MainText>
         {isEmailUpdate ? (
-          <Trans id="We received a request to change the email address associated with your Twenty account. Click below to confirm this change." />
+          <Trans
+          id="We received a request to change the email address associated with your {productName} account. Click below to confirm this change."
+          values={{ productName: BRAND_CONFIG.productName }}
+        />
         ) : (
-          <Trans id="Thanks for registering for an account on Twenty! Before we get started, we just need to confirm that this is you. Click below to verify your email address." />
+          <Trans
+          id="Thanks for registering for an account on {productName}! Before we get started, we just need to confirm that this is you. Click below to verify your email address."
+          values={{ productName: BRAND_CONFIG.productName }}
+        />
         )}
       </MainText>
       <br />

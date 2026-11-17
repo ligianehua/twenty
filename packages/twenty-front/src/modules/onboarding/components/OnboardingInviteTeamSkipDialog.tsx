@@ -9,6 +9,7 @@ import { useAtomStateValue } from '@/ui/utilities/state/jotai/hooks/useAtomState
 import { plural } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react/macro';
 import { type ComponentProps } from 'react';
+import { BRAND_CONFIG } from 'twenty-shared/constants';
 import { isDefined, isNonEmptyArray } from 'twenty-shared/utils';
 import { type DialogPopupProps } from 'twenty-ui/primitives/surfaces';
 import { getAbsoluteImageUrl } from '~/utils/image/getAbsoluteImageUrl';
@@ -30,6 +31,7 @@ export const OnboardingInviteTeamSkipDialog = ({
   onInvite,
   onSkip,
 }: OnboardingInviteTeamSkipDialogProps) => {
+  const productName = BRAND_CONFIG.productName;
   const { t } = useLingui();
   const currentWorkspaceMember = useAtomStateValue(currentWorkspaceMemberState);
   const onboardingInviteTeamValidEmails = useAtomStateValue(
@@ -76,7 +78,7 @@ export const OnboardingInviteTeamSkipDialog = ({
               one: "Your invite isn't sent yet",
               other: "Your # invites aren't sent yet",
             })
-          : t`Twenty works better with your team`
+          : t`${productName} works better with your team`
       }
       description={
         hasInviteEmails ? undefined : t`All it takes is their email.`

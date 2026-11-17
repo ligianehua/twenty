@@ -1,2 +1,3 @@
-export const DEFAULT_WORKSPACE_LOGO =
-  'https://twentyhq.github.io/placeholder-images/workspaces/twenty-logo.png';
+import { BRAND_CONFIG } from 'twenty-shared/constants';
+
+export const DEFAULT_WORKSPACE_LOGO = BRAND_CONFIG.logoPath;
